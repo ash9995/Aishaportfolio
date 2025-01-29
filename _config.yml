@@ -1,0 +1,18 @@
+theme: minima  # Or your chosen theme
+title: Aisha's Portfolio
+description: Personal portfolio website
+baseurl: ""  # Leave this blank if deploying to <username>.github.io
+url: "https://ash9995.github.io"
+
+# If using Jekyll:
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Ensure the correct source directory (if applicable)
+include:
+  - _pages
+  - assets
+  - index.html
+exclude:
+  - README.md
