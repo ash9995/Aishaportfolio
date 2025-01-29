@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aisha Alshammari - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gradient-primary: linear-gradient(90deg, #7B61FF, #E34DDB, #FF914D);
+            --gradient-hover: linear-gradient(90deg, #8B71FF, #F35DEB, #FFA15D);
+            --color-bg: #000;
+            --color-text: #fff;
+            --color-text-secondary: #E1E1E1;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+       /* Background b Image Styling */
+        #background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(4.9) invert(1);
+        }
+
+        #starry-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            border: none;
+            pointer-events: none;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 140px 24px;
+            position: relative;
+
+           
+        }
+
+        header h1 {
+            font-size: 72px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientFlow 8s linear infinite;
+        }
+
+        header p {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin-bottom: 32px;
+        }
+
+        header .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            border: 4px solid transparent;
+            background: var(--gradient-primary) padding-box,
+                        var(--gradient-primary) border-box;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 30px rgba(123, 97, 255, 0.2);
+            display: block;
+        }
+
+        header .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        header .cta {
+            margin-top: 40px;
+        }
+
+        header .cta a {
+            background: var(--gradient-primary);
+            color: var(--color-text);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 15px rgba(123, 97, 255, 0.3);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        header .cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(123, 97, 255, 0.4);
+            background: var(--gradient-hover);
+        }
+
+        .innovate-text {
+            font-size: 24px;
+            font-weight: 500;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 140px 24px;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+         
+        }
+
+        section h2 {
+            font-size: 56px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .gradient-text {
+            font-size: 14px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+            margin-bottom: 48px;
+            letter-spacing: 0.1em;
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 18px;
+            color: var(--color-text-secondary);
+            max-width: 800px;
+            margin: 0 auto 24px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* Experience Section */
+        .experience-details {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .experience-item h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: var(--color-text);
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .experience-item p[style] {
+            color: #aaa !important;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .experience-item div p {
+            margin: 12px 0;
+            color: var(--color-text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* Technologies Section */
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .tech-badge {
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid transparent;
+            background-image: var(--gradient-primary);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition-smooth);
+        }
+
+        .tech-badge::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--color-bg);
+            border-radius: inherit;
+            z-index: -1;
+        }
+
+        .tech-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(123, 97, 255, 0.2);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 24px;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition-smooth);
+            z-index: -1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: transparent;
+        }
+
+        .project-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .project-card img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 30px;
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: var(--color-text);
+            font-weight: 700;
+        }
+
+        .project-card p {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(17, 17, 17, 0.95);
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer p {
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+        }
+
+        footer a {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 48px;
+            }
+
+            header p {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 100px 20px;
+            }
+
+            section h2 {
+                font-size: 40px;
+            }
+
+            .project-card {
+                padding: 30px;
+            }
+
+            .experience-item {
+                padding: 24px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+
+            .tech-badge {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .experience-item h3 {
+                font-size: 24px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image -->
+    <img id="background-image" src="b.png" alt="Background Image">
+
+    <!-- Starry Background -->
+    <iframe id="starry-bg" src="starybg.html"></iframe>
+
+    <!-- Header Section -->
+    <header>
+        <img src="a.png" alt="Aisha Avatar" class="avatar">
+        <h1>Aisha Alshammari</h1>
+        <p>I do Code & <span class="innovate-text">Innovate</span> 🚀</p>
+        <div class="cta">
+            <a href="mailto:aisharsh@hotmail.com">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="gradient-text">EXPLORE NOW</div>
+        <p>
+            Greetings! I'm Aisha Alshammari, a dedicated app developer with a passion for transforming ideas into interactive, user-friendly applications. My expertise lies in iOS development using Swift, and I thrive on innovation and continuous learning. Explore my portfolio and witness the fusion of creativity and technology in my work!
+        </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="gradient-text">EXPLORE NOW</div>
+        <div class="experience-details">
+            <!-- GEOSA | Collaborator -->
+            <div class="experience-item">
+                <h3>GEOSA | Collaborator</h3>
+                <p style="color: #aaa;">Current Project</p>
+                <div>
+                    <p>Working on the <strong>3D Interactive GeoExplorer</strong>, a geospatial exploration tool integrating 3D visualization.</p>
+                    <p>Collaborating with a multidisciplinary team to enhance user experience through interactive features.</p>
+                </div>
+            </div>
+
+            <!-- Apple Developer Academy | App Developer Intern -->
+            <div class="experience-item">
+                <h3>Apple Developer Academy | App Developer Intern</h3>
+                <p style="color: #aaa;">Sep 2024 – Feb 2025 (Second Year Program)</p>
+                <div>
+                    <p>• Designing advanced UI/UX, and integrating AI features for seamless app functionality.</p>
+                    <p>Launched <strong>Gasgo</strong>, an app to find nearby gas stations with detailed services and Apple Maps integration.</p>
+                    <p>Coding and updating code while collaborating with other developers using git for version control.</p>
+                </div>
+                <p style="color: #aaa;">Sep 2023 – Jan 2024 (Academy Program)</p>
+                <div>
+                    <p>• Building seven apps with front-end and back-end development, using CloudKit.</p>
+                    <p>• Designing responsive interfaces with UIKit and SwiftUI.</p>
+                    <p>• Conducting UX research and integrating AI to enhance user experiences.</p>
+                </div>
+                <p style="color: #aaa;">Feb 2023 – Mar 2023 (Foundation Program)</p>
+                <div>
+                    <p>• Coding in Swift while designing user interfaces.</p>
+                    <p>• Solving design challenges using CBL methodology.</p>
+                </div>
+            </div>
+
+            <!-- Student | University Of Hail -->
+            <div class="experience-item">
+                <h3>Student | University Of Hail</h3>
+                <p style="color: #aaa;">Feb 2022 (Graduation Project)</p>
+                <div>
+                    <p>• Creating a web application with HTML, CSS, and JavaScript.</p>
+                    <p>• Designing user interfaces and implementing key features.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section>
+        <h2>Technologies</h2>
+        <div class="gradient-text">EXPLORE NOW</div>
+        <div class="technologies">
+            <div class="tech-badge">Swift</div>
+            <div class="tech-badge">CloudKit</div>
+            <div class="tech-badge">UIKit</div>
+            <div class="tech-badge">AI</div>
+            <div class="tech-badge">UI/UX</div>
+            <div class="tech-badge">HTML</div>
+            <div class="tech-badge">CSS</div>
+            <div class="tech-badge">JavaScript</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="gradient-text">EXPLORE NOW</div>
+        <div class="projects-grid">
+            <!-- GasGo App -->
+            <div class="project-card">
+                <img src="GasGoApp.png" alt="GasGo App">
+                <h3>GasGo App</h3>
+                <p>An app for facilitating finding services available at gas stations.</p>
+            </div>
+            
+            <!-- Esaham App -->
+            <div class="project-card">
+                <img src="EsahamApp.png" alt="Esaham App">
+                <h3>Esaham App</h3>
+                <p>A planting app designed to track your plant growth, access valuable gardening resources, and leverage AI to diagnose and treat plant issues.</p>
+            </div>
+            
+            <!-- Raheeb App -->
+            <div class="project-card">
+                <img src="RaheebApp.png" alt="Raheeb App">
+                <h3>Raheeb App</h3>
+                <p>A transformative app designed for your mental wellness journey.</p>
+            </div>
+            
+            <!-- Jadeela App -->
+            <div class="project-card">
+                <img src="JadeelaApp.png" alt="Jadeela App">
+                <h3>Jadeela App</h3>
+                <p>An app that uses AI to detect your hair type and create personalized routines.</p>
+            </div>
+            
+            <!-- IHAYDRATE App -->
+            <div class="project-card">
+                <img src="IHAYDRATEApp.png" alt="IHAYDRATE App">
+                <h3>IHAYDRATE App</h3>
+                <p>An app that helps you count your water intake based on your personal info, designed for watchOS.</p>
+            </div>
+            
+            <!-- CODEHIVE App -->
+            <div class="project-card">
+                <img src="CODEHIVEApp.png" alt="CODEHIVE App">
+                <h3>CODEHIVE App</h3>
+                <p>An app that helps developers organize their portfolio seamlessly, designed for macOS.</p>
+            </div>
+            
+            <!-- Emojenary Adventure -->
+            <div class="project-card">
+                <img src="EmojenaryAdventure.png" alt="Emojenary Adventure">
+                <h3>Emojenary Adventure</h3>
+                <p>A fun and engaging game that makes you guess the names of movies, games, etc., using emojis.</p>
+            </div>
+            
+            <!-- Wasl -->
+            <div class="project-card">
+                <img src="Wasel.png" alt="Wasl">
+                <h3>Wasl</h3>
+                <p>An app that helps the deaf and hard of hearing communicate easily using AI hand gesture-to-text translation.</p>
+            </div>
+
+            <!-- StaffSync -->
+            <div class="project-card">
+                <img src="StaffSync.png" alt="StaffSync">
+                <h3>StaffSync</h3>
+                <p>A web workforce management platform designed to streamline the process of scheduling, managing, and communicating with staff.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Aisha Rashid Alshammari. All rights reserved.</p>
+        <p><a href="https://github.com/ash9995">Visit My GitHub</a></p>
+    </footer>
+</body>
+</html>
