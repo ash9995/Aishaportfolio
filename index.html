@@ -61,8 +61,6 @@
             text-align: center;
             padding: 140px 24px;
             position: relative;
-
-           
         }
 
         header h1 {
@@ -139,7 +137,6 @@
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
-         
         }
 
         section h2 {
@@ -286,6 +283,9 @@
             position: relative;
             overflow: hidden;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card::before {
@@ -314,7 +314,7 @@
         .project-card img {
             width: 100px;
             height: auto;
-            margin-bottom: 30px;
+            margin: 0 auto 30px auto;
             transition: var(--transition-smooth);
         }
 
@@ -333,6 +333,31 @@
             font-size: 16px;
             color: var(--color-text-secondary);
             line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Project Link Button */
+        .project-link {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: var(--transition-smooth);
+            align-self: center;
+        }
+
+        .project-link:hover {
+            background: var(--gradient-primary);
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(123, 97, 255, 0.3);
+            color: #fff;
         }
 
         /* Footer */
@@ -427,13 +452,10 @@
     </style>
 </head>
 <body>
-    <!-- Background Image -->
     <img id="background-image" src="b.png" alt="Background Image">
 
-    <!-- Starry Background -->
     <iframe id="starry-bg" src="starybg.html"></iframe>
 
-    <!-- Header Section -->
     <header>
         <img src="a.png" alt="Aisha Avatar" class="avatar">
         <h1>Aisha Alshammari</h1>
@@ -443,7 +465,6 @@
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
         <div class="gradient-text">EXPLORE NOW</div>
@@ -452,12 +473,21 @@
         </p>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <h2>Experience</h2>
         <div class="gradient-text">EXPLORE NOW</div>
         <div class="experience-details">
-            <!-- GEOSA | Collaborator -->
+            
+            <div class="experience-item">
+                <h3>Culture House | IT Support Specialist</h3>
+                <p style="color: #aaa;">Jun 2025 – Present</p>
+                <div>
+                    <p>• Managed comprehensive IT support operations, including the setup and maintenance of advanced audio systems and technical infrastructure.</p>
+                    <p>• Gained recognition from the main headquarters for exceptional performance, leading to task assignments across all 8 Culture House branches.</p>
+                    <p>• Successfully developed and launched 6 impactful projects since the beginning of my tenure.</p>
+                </div>
+            </div>
+
             <div class="experience-item">
                 <h3>GEOSA | Collaborator</h3>
                 <p style="color: #aaa;">Current Project</p>
@@ -467,7 +497,6 @@
                 </div>
             </div>
 
-            <!-- Apple Developer Academy | App Developer Intern -->
             <div class="experience-item">
                 <h3>Apple Developer Academy | App Developer Intern</h3>
                 <p style="color: #aaa;">Sep 2024 – Feb 2025 (Second Year Program)</p>
@@ -489,7 +518,6 @@
                 </div>
             </div>
 
-            <!-- Student | University Of Hail -->
             <div class="experience-item">
                 <h3>Student | University Of Hail</h3>
                 <p style="color: #aaa;">Feb 2022 (Graduation Project)</p>
@@ -501,7 +529,6 @@
         </div>
     </section>
 
-    <!-- Technologies Section -->
     <section>
         <h2>Technologies</h2>
         <div class="gradient-text">EXPLORE NOW</div>
@@ -517,68 +544,95 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
         <div class="gradient-text">EXPLORE NOW</div>
         <div class="projects-grid">
-            <!-- GasGo App -->
+            
+            <div class="project-card">
+                <img src="Wasel.png" alt="Wasl">
+                <h3>Wasl</h3>
+                <p>An app that helps the deaf and hard of hearing communicate easily using AI hand gesture-to-text translation.</p>
+                <a href="https://apps.apple.com/sa/app/wasl-%D9%88-%D8%B5%D9%84/id6737346276" target="_blank" class="project-link">Download on App Store</a>
+            </div>
+
+            <div class="project-card">
+                <img src="Rudood.png" alt="Rudood">
+                <h3>Rudood</h3>
+                <p>A comprehensive platform designed to streamline interactions and manage responses efficiently.</p>
+                <a href="https://rudood.sa" target="_blank" class="project-link">Visit Website</a>
+            </div>
+
+            <div class="project-card">
+                <img src="CareLink.png" alt="CareLink">
+                <h3>CareLink</h3>
+                <p>Seamless connections and smarter care for advanced healthcare management.</p>
+                <a href="https://www.carelinksa.com/" target="_blank" class="project-link">Visit Website</a>
+            </div>
+
+            <div class="project-card">
+                <img src="Rufoof.png" alt="Rufoof">
+                <h3>Rufoof (رفوف)</h3>
+                <p>A digital library and resource management platform for organizing content seamlessly.</p>
+                <a href="https://rufoof.website/sources" target="_blank" class="project-link">Visit Website</a>
+            </div>
+
+            <div class="project-card">
+                <img src="Hader.png" alt="Hader">
+                <h3>Hader (حاضر)</h3>
+                <p>An advanced and reliable system tailored for efficient attendance and departure management.</p>
+                <a href="https://ash9995.github.io/HADER/" target="_blank" class="project-link">Visit Website</a>
+            </div>
+
+            <div class="project-card">
+                <img src="Muensa.png" alt="Muensa">
+                <h3>Mueen (مُعين)</h3>
+                <p>A supportive digital platform providing various helpful tools and digital resources.</p>
+                <a href="https://muensa.website" target="_blank" class="project-link">Visit Website</a>
+            </div>
+
             <div class="project-card">
                 <img src="GasGoApp.png" alt="GasGo App">
                 <h3>GasGo App</h3>
                 <p>An app for facilitating finding services available at gas stations.</p>
             </div>
             
-            <!-- Esaham App -->
             <div class="project-card">
                 <img src="EsahamApp.png" alt="Esaham App">
                 <h3>Esaham App</h3>
                 <p>A planting app designed to track your plant growth, access valuable gardening resources, and leverage AI to diagnose and treat plant issues.</p>
             </div>
             
-            <!-- Raheeb App -->
             <div class="project-card">
                 <img src="RaheebApp.png" alt="Raheeb App">
                 <h3>Raheeb App</h3>
                 <p>A transformative app designed for your mental wellness journey.</p>
             </div>
             
-            <!-- Jadeela App -->
             <div class="project-card">
                 <img src="JadeelaApp.png" alt="Jadeela App">
                 <h3>Jadeela App</h3>
                 <p>An app that uses AI to detect your hair type and create personalized routines.</p>
             </div>
             
-            <!-- IHAYDRATE App -->
             <div class="project-card">
                 <img src="IHAYDRATEApp.png" alt="IHAYDRATE App">
                 <h3>IHAYDRATE App</h3>
                 <p>An app that helps you count your water intake based on your personal info, designed for watchOS.</p>
             </div>
             
-            <!-- CODEHIVE App -->
             <div class="project-card">
                 <img src="CODEHIVEApp.png" alt="CODEHIVE App">
                 <h3>CODEHIVE App</h3>
                 <p>An app that helps developers organize their portfolio seamlessly, designed for macOS.</p>
             </div>
             
-            <!-- Emojenary Adventure -->
             <div class="project-card">
                 <img src="EmojenaryAdventure.png" alt="Emojenary Adventure">
                 <h3>Emojenary Adventure</h3>
                 <p>A fun and engaging game that makes you guess the names of movies, games, etc., using emojis.</p>
             </div>
             
-            <!-- Wasl -->
-            <div class="project-card">
-                <img src="Wasel.png" alt="Wasl">
-                <h3>Wasl</h3>
-                <p>An app that helps the deaf and hard of hearing communicate easily using AI hand gesture-to-text translation.</p>
-            </div>
-
-            <!-- StaffSync -->
             <div class="project-card">
                 <img src="StaffSync.png" alt="StaffSync">
                 <h3>StaffSync</h3>
@@ -587,7 +641,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Aisha Rashid Alshammari. All rights reserved.</p>
         <p><a href="https://github.com/ash9995">Visit My GitHub</a></p>
